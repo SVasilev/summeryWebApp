@@ -1,0 +1,318 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+}
+
+button.clickable {
+  color: white;
+  border: 0;
+  cursor: hand;
+  margin-left: 10px;
+  background-color: rgb(151, 191, 14);
+}
+
+button.clickable:hover {
+  color: green;
+}
+
+button.unclickable {
+  color: grey;
+  border: 1;
+  border-style: solid;
+  background-color: white;
+  border-color: rgb(151, 191, 14);
+}
+
+a.not_selected:hover {
+  color: white;
+  background-color: rgb(151, 191, 14);
+}
+
+nav a {
+  cursor: hand;
+  display: block;
+  font-size: 14px;
+  padding: 9px;
+  text-decoration: none;
+}
+
+a.not_selected {
+  color: grey;
+}
+
+a.selected {
+  color: white;
+  background-color: rgb(151, 191, 14);
+}
+
+hr {
+  border-color: lightgrey;
+  margin-bottom: -5px;
+  margin-top: -2px;
+}
+
+hr.body {
+  float: left;
+  margin-top: 0.6%;
+  margin-bottom: 0.6%;
+  margin-left: 18.5%;
+  margin-right: 18.5%;
+  width: 63%;
+}
+
+nav.menu {
+  float: left;
+  width: 18.72%;
+  margin-right: 2%;
+  margin-top: 40px;
+  margin-left: 18.5%;
+}
+
+h2 {
+  margin-top: -6px;
+  margin-bottom: 1px;
+  color: rgb(151, 191, 14);
+}
+
+aside {
+  float: left;
+  margin-right: 18.5%;
+  width: 42.28%;
+}
+
+footer {
+  text-align: center;
+}
+
+nav.login_panel {
+  display: block;
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 14px;
+}
+
+textarea {
+  display: block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  resize: none;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 70px;
+}
+
+p a {
+  text-decoration: none;
+}
+
+/* Register page */
+
+h5 {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(151, 191, 14);
+}
+
+section.register {
+  display: block;
+  margin-left: 39%;
+  width: 22%;
+  margin-top: 10%;
+}
+
+button.register {
+  margin: 10px;
+  width: 90%;
+  height: 32px;
+  color: white;
+  text-align: center;
+  border-style: none;
+  cursor: hand;
+  background-color: rgb(151, 191, 14);
+}
+
+form.authentication {
+  text-align: center;
+  margin-top: -6.5%;
+  padding-top: 2%;
+  border-style: solid;
+  border-width: 1px;
+  border-top-width: 0px;
+  background-color: rgb(245, 245, 240);
+}
+
+input.authentication {
+  text-indent: 10px;
+  margin: 10px;
+  width: 90%;
+  height: 32px;
+}
+
+/* Make the upload and submit button stylish */
+
+input[type=file]::-webkit-file-upload-button {
+  visibility: hidden;
+  font-size: 16px;
+}
+
+input[type=file]::before {
+  content: 'Изберете файл';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, rgb(151, 191, 14), rgb(151, 191, 14));
+  border: 1px solid rgb(151, 191, 14);;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type=file]:focus {
+  outline: 0;
+}
+
+input[type=file]:hover::before {
+  border-color: black;
+}
+
+input[type=submit] {
+  content: 'Изберете файл';
+  background: -webkit-linear-gradient(top, rgb(151, 191, 14), rgb(151, 191, 14));
+  border: 1px solid rgb(151, 191, 14);;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  border-color: black;
+}
+
+/* Prettify tables */
+
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+}
+
+.bordered tr:hover {
+    background: lightgoldenrodyellow;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+    padding: 10px;
+    cursor: hand;
+    text-align: center;
+}
+
+.bordered th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(rgb(151, 191, 14)));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, rgb(151, 191, 14));
+    background-image:    -moz-linear-gradient(top, #ebf3fc, rgb(151, 191, 14));
+    background-image:     -ms-linear-gradient(top, #ebf3fc, rgb(151, 191, 14));
+    background-image:      -o-linear-gradient(top, #ebf3fc, rgb(151, 191, 14));
+    background-image:         linear-gradient(top, #ebf3fc, rgb(151, 191, 14));
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    border-top: none;
+    font-size: 16px;
+    color: darkslategrey;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+/* Rating stars */
+
+#ratingdiv {
+  overflow: hidden;
+  margin-left: 10%;
+}
+
+#ratingdiv .undone, #ratingdiv .fade {
+  background: url("../img/star.gif") -30px 0 no-repeat;
+  width: 28px;
+  height: 30px;
+  float: left;
+  text-indent: -99999px;
+}
+#ratingdiv .done {
+  background: url("../img/star.gif") no-repeat;
+  width: 28px;
+  height: 30px;
+  float: left;
+  text-indent: -99999px;
+}
+#ratingdiv .undone:hover{
+  background-position: 0;
+}
