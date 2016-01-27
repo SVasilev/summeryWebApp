@@ -1,10 +1,42 @@
 /* global $ */
 
+var userData = '';
+
 $(document).ready(function() {
   attachMenuListeners();
   // Load the home page.
   changeContent($('#home')[0]);
+
+  userData = $.ajax({
+    type: "GET",
+    data: { action: 'getSessionData' },
+    url: "../php/session.php",
+    async: false
+  }).responseText;
+
+  changeLoginPanel();
 });
+
+function destroySession() {
+  $.ajax({
+    type: "GET",
+    url: '../php/session.php?action=destroySession',
+    success: function(response) {
+      if (response === 'deleted') {
+        window.location.assign('index.html');
+      }
+    },
+    error: function(response) {
+      alert(response.responseText);
+    }
+  });
+}
+
+function changeLoginPanel() {
+  if (userData) { // Check if we have session
+    $('nav.login_panel').html('Здравейте, ' + userData + ' | <a style="color: blue; text-decoration: underline; cursor: hand;" onclick="destroySession()">Изход</a>');
+  }
+}
 
 function addTableForReview() {
   $('table.bordered thead:last').after('<tr><td>Селскостопански мотиви</td><td>Антонио Николов</td><td>4.78</td><td><a href="./index.html" download>Изтегли</a></td><td><div id="ratingdiv"><a href="#" class="undone" rel="1">star one</a><a href="#" class="undone" rel="2">star two</a><a href="#" class="undone" rel="3">star three</a><a href="#" class="undone" rel="4">star four</a><a href="#" class="undone" rel="5">star five</a></div></td></tr>');
@@ -33,9 +65,10 @@ function attachStarsListeners() {
 
 function attachMenuListeners() {
   $('nav.menu > a').click(function() {
-    /*
-      Check if logged in. PHP
-    */
+    // Redirect to login page if we dont have session.
+    if ($(this).context.id !== 'home' && !userData) {
+      return window.location.assign('login.html');
+    }
 
     $('nav.menu > a').each(function() {
       $(this).removeClass('selected');

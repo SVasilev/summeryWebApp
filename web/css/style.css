@@ -32,7 +32,7 @@ a.not_selected:hover {
   background-color: rgb(151, 191, 14);
 }
 
-nav a {
+a.selected, a.not_selected {
   cursor: hand;
   display: block;
   font-size: 14px;
@@ -237,7 +237,6 @@ table {
     border-top: 1px solid #ccc;
     font-size: 14px;
     padding: 10px;
-    cursor: hand;
     text-align: center;
 }
 
@@ -306,6 +305,7 @@ table {
   float: left;
   text-indent: -99999px;
 }
+
 #ratingdiv .done {
   background: url("../img/star.gif") no-repeat;
   width: 28px;
@@ -313,6 +313,12 @@ table {
   float: left;
   text-indent: -99999px;
 }
+
 #ratingdiv .undone:hover{
   background-position: 0;
+}
+
+#registerStatus {
+  color: #004a80;
+  font-size: 16px;
 }
