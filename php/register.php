@@ -4,6 +4,7 @@
   if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
   }
+  $connection->query("SET NAMES 'utf8'");
 
   $userEmail = htmlspecialchars($_GET["email"]);
   $userName = htmlspecialchars($_GET["name"]);
@@ -18,6 +19,9 @@
                          "'" . $userFamily . "', '" . $userPassword . "')");
       echo "Регистрацията е успешна.";
     }
+  }
+  else {
+    echo $connection->error;
   }
 
   $connection->close();

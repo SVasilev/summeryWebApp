@@ -14,10 +14,14 @@
 
       session_start();
       $_SESSION["time"] = time();
+      $_SESSION["userEmail"] = $row[1];
       $_SESSION["user"] = $row[2] . " " . $row[3];
       echo "Успешно влизане.";
     }
     else echo "Посочените данни са неверни.";
+  }
+  else {
+    $connection->error;
   }
 
   $connection->close();

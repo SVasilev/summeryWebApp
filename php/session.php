@@ -15,10 +15,10 @@
 
   function getSessionData() {
     if (array_key_exists("user", $_SESSION)) {
-      echo $_SESSION["user"];
+      echo json_encode(array("userNames" => $_SESSION["user"], "userEmail" => $_SESSION["userEmail"]));
     }
     else {
-      echo "";
+      echo "null";
     }
   }
 

@@ -10,7 +10,7 @@ var loginUtils = { // eslint-disable-line no-unused-vars
       var timer = setInterval(function() {
         if (opacity <= 0.1) {
           clearInterval(timer);
-          if (responseText === 'Успешно влизане.') {
+          if (responseText === 'Успешно влизане.' || responseText === 'Регистрацията е успешна.') {
             clearInterval(timer);
             window.location.assign('./index.html');
           }
@@ -29,8 +29,7 @@ var loginUtils = { // eslint-disable-line no-unused-vars
     $.ajax({
       url: '../php/' + service + '.php?' + parameters,
       success: function(response) {
-        loginUtils.fadeOut('registerStatus', response.toString());
-        return;
+        return loginUtils.fadeOut('registerStatus', response.toString());
       },
       error: function(response) {
         alert(response.responseText);
@@ -73,15 +72,15 @@ var loginUtils = { // eslint-disable-line no-unused-vars
     var password = document.getElementById('password')['value'];
     var requestParameters = 'email=' + email + '&password=' + password;
 
-    // if (email && password) {
-    //   if (!loginUtils.isEmailValid(email)) {
-    //     loginUtils.fadeOut('registerStatus', 'Невалиден e-mail адрес.');
-    //     return;
-    //   }
+    if (email && password) {
+      if (!loginUtils.isEmailValid(email)) {
+        loginUtils.fadeOut('registerStatus', 'Невалиден e-mail адрес.');
+        return;
+      }
       loginUtils.executeQuery('login', requestParameters);
-    // }
-    // else {
-    //   loginUtils.fadeOut('registerStatus', 'Моля попълнете всички полета.');
-    // }
+    }
+    else {
+      loginUtils.fadeOut('registerStatus', 'Моля попълнете всички полета.');
+    }
   }
 };
